@@ -1,0 +1,899 @@
+<div class="scholarship-form">
+    <div class="heading">
+      <b>SCHOLARSHIP APPLICATION FORM</b>
+    </div>
+    <div class="hor-line"></div>
+    <form
+      [formGroup]="scholarshipForm"
+      (ngSubmit)="onSubmit()"
+      class="scholarship-form"
+    >
+      <div class="application-form">
+        <!-- Basic Information -->
+        <div class="side-heading"><b>Basic Information:</b></div>
+        <div class="basic-details">
+          <!-- Aadhar & Religion -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Aadhar Number</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="aadharNumber"
+                placeholder="Enter Aadhar Number"
+                formControlName="aadharNumber"
+                [ngClass]="{
+                  'is-invalid': submitted && f['aadharNumber'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['aadharNumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['aadharNumber'].errors['required']">
+                  Aadhar Number is required
+                </div>
+                <div *ngIf="f['aadharNumber'].errors['pattern']">
+                  Enter 12 digit valid Aadhar Number
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Religion</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="regligion"
+                placeholder="Enter Religion"
+                formControlName="regligion"
+                [ngClass]="{ 'is-invalid': submitted && f['regligion'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['regligion'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['regligion'].errors['required']">
+                  Religion is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- community -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Community/Catagory</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="community"
+                placeholder="Enter Community/Catagory"
+                formControlName="community"
+                [ngClass]="{ 'is-invalid': submitted && f['community'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['community'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['community'].errors['required']">
+                  Community/Catagory is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- F & M names -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Father Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="fatherName"
+                [ngClass]="{ 'is-invalid': submitted && f['fatherName'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['fatherName'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['fatherName'].errors['required']">
+                  Father Name is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Mother Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="mothername"
+                placeholder="Enter Mother Name"
+                formControlName="mothername"
+                [ngClass]="{ 'is-invalid': submitted && f['mothername'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['mothername'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['mothername'].errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Annual Income -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Family Annual Income</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="familyincome"
+                placeholder="Enter Family Annual Income"
+                formControlName="familyincome"
+                [ngClass]="{
+                  'is-invalid': submitted && f['familyincome'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['familyincome'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['familyincome'].errors['required']">
+                  Amount is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Academic details -->
+        <div class="side-heading"><b>Academic Details:</b></div>
+        <div class="basic-details">
+          <!-- institute & class -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Institute Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="institutename"
+                placeholder="Enter Institute Name"
+                formControlName="institutename"
+                [ngClass]="{
+                  'is-invalid': submitted && f['institutename'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['institutename'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['institutename'].errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Present Class/Course</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="presentclasscourse"
+                placeholder="Enter Present Class/Course"
+                formControlName="presentclasscourse"
+                [ngClass]="{
+                  'is-invalid': submitted && f['presentclasscourse'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['presentclasscourse'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['presentclasscourse'].errors['required']">
+                  course is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- year & Study -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Present Class/Course Year</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="presentclassyear"
+                placeholder="Enter Year"
+                formControlName="presentclassyear"
+                [ngClass]="{
+                  'is-invalid': submitted && f['presentclassyear'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['presentclassyear'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['presentclassyear'].errors['required']">
+                  Year is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Mode of Stydy</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="modeofstudy"
+                formControlName="modeofstudy"
+                [ngClass]="{ 'is-invalid': submitted && f['modeofstudy'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['modeofstudy'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['modeofstudy'].errors['required']">
+                  Study is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Date & M name -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Class Start Date</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="classstartdate"
+                placeholder="Enter Start Date"
+                formControlName="classstartdate"
+                [ngClass]="{
+                  'is-invalid': submitted && f['classstartdate'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['classstartdate'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['classstartdate'].errors['required']">
+                  Date is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >University/Board Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="universityname"
+                formControlName="universityname"
+                [ngClass]="{
+                  'is-invalid': submitted && f['universityname'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['universityname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['universityname'].errors['required']">
+                  UniversityName is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Pre class/course & Passing Year & class % -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Previous class/course</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="previousclasscourse"
+                placeholder="Enter Previous class/course"
+                formControlName="previousclasscourse"
+                [ngClass]="{
+                  'is-invalid': submitted && f['previousclasscourse'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['previousclasscourse'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['previousclasscourse'].errors['required']">
+                  Previous Class is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Previous Passing Year</label
+            >
+            <div class="col-sm-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="previouspassingyear"
+                placeholder="Previous Passing Year"
+                formControlName="previouspassingyear"
+                [ngClass]="{
+                  'is-invalid': submitted && f['previouspassingyear'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['previouspassingyear'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['previouspassingyear'].errors['required']">
+                  Previous Passing Year
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Previous Class %</label
+            >
+            <div class="col-sm-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="previousclasspercentage"
+                placeholder="Enter Class %"
+                formControlName="previousclasspercentage"
+                [ngClass]="{
+                  'is-invalid': submitted && f['previousclasspercentage'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['previousclasspercentage'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['previousclasspercentage'].errors['required']">
+                  Class % is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 10th Class -->
+        <div class="side-heading"><b>10th Class</b></div>
+        <div class="basic-details">
+          <!-- Roll No & Board Name -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Roll Number</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="tenthRollNumber"
+                placeholder="Enter Roll Number"
+                formControlName="tenthRollNumber"
+                [ngClass]="{
+                  'is-invalid': submitted && f['tenthRollNumber'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['tenthRollNumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['tenthRollNumber'].errors['required']">
+                  RollNo is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Board Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="tenthboardname"
+                placeholder="Enter Board Name"
+                formControlName="tenthboardname"
+                [ngClass]="{
+                  'is-invalid': submitted && f['tenthboardname'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['tenthboardname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['tenthboardname'].errors['required']">
+                  BoardName is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Passing Year & % Obtained -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Passing Year</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="tenthpassingyear"
+                placeholder="Enter Passing Year"
+                formControlName="tenthpassingyear"
+                [ngClass]="{
+                  'is-invalid': submitted && f['tenthpassingyear'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['tenthpassingyear'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['tenthpassingyear'].errors['required']">
+                  passingyear is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >% Obtained</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="tenthpercentageobtained"
+                placeholder="Enter Percentage"
+                formControlName="tenthpercentageobtained"
+                [ngClass]="{
+                  'is-invalid': submitted && f['tenthpercentageobtained'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['tenthpercentageobtained'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['tenthpercentageobtained'].errors['required']">
+                  % is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 12th Class -->
+        <div class="side-heading"><b>12th Class</b></div>
+        <div class="basic-details">
+          <!-- Roll Number & Board Name -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Roll Number</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="twelthrollnumber"
+                placeholder="Enter Roll number"
+                formControlName="twelthrollnumber"
+                [ngClass]="{
+                  'is-invalid': submitted && f['twelthrollnumber'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['twelthrollnumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['twelthrollnumber'].errors['required']">
+                  RollNo is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Board Name</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="twelthboardname"
+                placeholder="Enter Board Name"
+                formControlName="twelthboardname"
+                [ngClass]="{
+                  'is-invalid': submitted && f['twelthboardname'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['twelthboardname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['twelthboardname'].errors['required']">
+                  BoardName is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Passing Year & % OBtained -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Passing Year</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="twelthpassingyear"
+                placeholder="Enter Passing Year"
+                formControlName="twelthpassingyear"
+                [ngClass]="{
+                  'is-invalid': submitted && f['twelthpassingyear'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['twelthpassingyear'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['twelthpassingyear'].errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >% Obtained</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="twelthpercentageobtained"
+                placeholder="Enter Percentage"
+                formControlName="twelthpercentageobtained"
+                [ngClass]="{
+                  'is-invalid': submitted && f['twelthpercentageobtained'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['twelthpercentageobtained'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['twelthpercentageobtained'].errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Fee Details -->
+        <div class="side-heading"><b>Fee Details</b></div>
+        <div class="basic-details">
+          <!-- Admission Fee & Tuition Fee & Other Fee -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Admission Fee</label
+            >
+            <div class="col-sm-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="admissionFee"
+                placeholder="Enter Admission Fee"
+                formControlName="admissionFee"
+                [ngClass]="{
+                  'is-invalid': submitted && f['admissionFee'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['admissionFee'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['admissionFee'].errors['required']">
+                  Admission Fee is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Tuition Fee</label
+            >
+            <div class="col-sm-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter Tuition Fee"
+                formControlName="tutionFee"
+                [ngClass]="{
+                  'is-invalid': submitted && f['tutionFee'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['tutionFee'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['tutionFee'].errors['required']">
+                  Tuition Fee is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Other Fee</label
+            >
+            <div class="col-sm-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter Other Fee"
+                formControlName="otherFee"
+                [ngClass]="{
+                  'is-invalid': submitted && f['otherFee'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['otherFee'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['otherFee'].errors['required']">
+                  Other Fee is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Other Personal Details -->
+        <div class="side-heading"><b>Other Personal Details</b></div>
+        <div class="basic-details">
+          <!-- Disabled & Type of Disabled -->
+          <div class="form-group mb-3 row">
+            <label
+              for=" isDisabled"
+              class="col-sm-2 col-form-label col-form-label-sm"
+            >
+              Is Disabled</label
+            >
+  
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="isDisabled"
+                formControlName="isDisabled"
+                [ngClass]="{
+                  'is-invalid': submitted && f['isDisabled'].errors
+                }"
+              >
+                <option value="">select</option>
+                <option value="one">YES</option>
+                <option value="two">NO</option>
+              </select>
+              <div
+                *ngIf="submitted && f['isDisabled'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['isDisabled'].errors['required']">
+                  Select Disability
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-sm-3"> -->
+            <!-- <input type="text" class="form-control form-control-sm" id="colFormLabelSm" -->
+            <!-- > -->
+            <!-- </div> -->
+  
+            <label
+              for="typeofDisabled"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Type of Disabled</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="typeOfDisabled"
+                formControlName="typeOfDisabled"
+                [ngClass]="{
+                  'is-invalid': submitted && f['typeOfDisabled'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['typeOfDisabled'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['typeOfDisabled'].errors['required']">
+                  Type of Disabled is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- % Disablity & Marital Status -->
+          <div class="form-group mb-3 row">
+            <label
+              for="percentDisablity"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >% of Disablity</label
+            >
+  
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter Percentage Disablity"
+                formControlName="percentageDisabled"
+                [ngClass]="{
+                  'is-invalid': submitted && f['percentageDisabled'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['percentageDisabled'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['percentageDisabled'].errors['required']">
+                  Disabled Percentage is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Marital Status</label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="maritalStatus"
+                formControlName="maritalStatus"
+                [ngClass]="{
+                  'is-invalid': submitted && f['maritalStatus'].errors
+                }"
+              >
+                <option value="">select</option>
+                <option value="one">Married</option>
+                <option value="two">UnMarried</option>
+              </select>
+              <div
+                *ngIf="submitted && f['maritalStatus'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['maritalStatus'].errors['required']">
+                  Select Marital Status
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Parents Profession -->
+          <div class="form-group mb-3 row">
+            <label
+              for="parentsProfession"
+              class="col-sm-2 col-form-label col-form-label-sm"
+              >Parents Profession</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="parentsProfession"
+                placeholder="Enter Parents Profession"
+                formControlName="parentsProfession"
+                [ngClass]="{
+                  'is-invalid': submitted && f['parentsProfession'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['parentsProfession'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['parentsProfession'].errors['required']">
+                  Parents Percentage is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="hor-line"></div>
+      </div>
+  
+      <div class="button-row">
+        <button type="submit" target="_blank">Next</button>
+      </div>
+    </form>
+  </div>

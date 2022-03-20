@@ -1,0 +1,71 @@
+ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 30px 50px;
+}
+
+.logo {
+  border: 1px solid green;
+  padding: 0px 30px;
+}
+
+.national-scholarship {
+  margin: 10px 60px;
+  border: 1px solid blue;
+}
+.national-scholar {
+  margin: 20px 80px;
+  border: 2px solid black;
+}
+.national-scholar p {
+  align-items: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+form {
+  margin: 20px 180px;
+  border: 1px solid #ffffff;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid green;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 14px 20px;
+  margin: 80px 0;
+  border: 1px solid green;
+  cursor: pointer;
+  width: 50%;
+  background-color: green;
+  color: #fff;
+}
+
+.username {
+  padding-right: 70px;
+}
+
+.password {
+  padding-right: 54px;
+}
+.forgot-password {
+  margin-right: 54px;
+  margin-top: 30px;
+}
+
+.error-msg {
+  padding: 15px;
+  margin: 3em;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  font-weight: 400;
+  text-align: center;
+}

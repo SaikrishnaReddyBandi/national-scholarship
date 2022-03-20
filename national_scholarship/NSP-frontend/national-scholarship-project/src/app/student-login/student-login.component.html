@@ -1,0 +1,18 @@
+
+<div class="container">
+    <form [formGroup]="studentLoginForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="isValidForm" class="row error-msg">
+        <div>Please fill the necessary fields inorder to login!</div>
+      </div>
+      <label for="uname">UID</label>
+      <input type="text" name="userId" formControlName="userId" />
+  
+      <label for="psw">Password</label>
+      <input type="password" name="password" formControlName="password" />
+  
+      <span class="psw">Forgot <a href="#">password?</a></span>
+      <p style="padding: 15px 0px">Institute/State/MinistryLogin</p>
+  
+      <button type="submit" target="_blank">Login</button>
+    </form>
+  </div>

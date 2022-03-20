@@ -1,0 +1,72 @@
+.scholarship-form {
+    margin: 30px;
+    color: rgb(1, 1, 2);
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px;
+  }
+  
+  .application-form {
+    margin: 30px;
+  }
+  
+  .col-form-label:after {
+    content: "*";
+    color: red;
+    font-size: 14px;
+  }
+  
+  .side-heading,
+  .col-form-label {
+    font-size: 12px;
+  }
+  
+  .basic-details {
+    margin-top: 10px;
+    margin-left: 60px;
+  }
+  
+  .hor-line {
+    border: 1px solid green;
+  }
+  
+  .button-row {
+    text-align: center;
+    margin: 30px 0px;
+    color: green;
+  }
+  
+  button {
+    border: 1px solid rgb(112, 109, 109);
+    background-color: green;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 5px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 20px;
+    cursor: pointer;
+  }
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #e2041a;
+    font-size: 12px;
+  }
+  
+  .error-msg {
+    margin-top: 3em;
+    color: red;
+    font-weight: 400;
+    text-align: center;
+  }

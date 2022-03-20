@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container-verification {
+    margin: 20px;
+    border: 1px solid green;
+  }
+  
+  .national-scholarship p {
+    border: 1px solid green;
+    text-align: center;
+    margin: 20px 60px;
+    padding: 20px 60px;
+  }
+  
+  .home-section {
+    margin: 20px 60px;
+  }
+  
+  .institute-name-box,
+  .student-application-box {
+    border: 1px solid green;
+    margin: 2px;
+    padding: 100px;
+    text-align: center;
+  }
+  .application-box {
+    border: 1px solid green;
+    margin: 2px;
+    padding: 120px;
+    text-align: center;
+  }
+  
+  .institute-name {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #04aa6d;
+    color: white;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(6, 107, 6);
+  }

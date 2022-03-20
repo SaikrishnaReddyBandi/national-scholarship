@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.national-scholarship {
+  margin: 10px 60px;
+  border: 1px solid green;
+}
+.national-scholar {
+  text-align: center;
+  margin: 20px 280px;
+  border: 1px solid blue;
+}
+.text-bold {
+  font-weight: bold;
+}
+
+.topnav {
+  overflow: hidden;
+  border: 1px solid green;
+  margin: 10px 20px;
+  background-color: rgb(63, 128, 202);
+  color: aliceblue;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 76px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.home-page {
+  border: 1px solid green;
+  margin: 30px 20px;
+  padding: 10px;
+}
+.detail-portal {
+  border: 1px solid green;
+  text-align: center;
+  margin: 10px;
+  padding: 170px 0px;
+}
+.student-log {
+  border: 1px solid green;
+  margin: 10px;
+  padding: 10px;
+}
+
+.student-log p {
+  text-align: center;
+}
+
+.row {
+  --bs-gutter-x: 0rem;
+}
+
+.updates-box{
+  border: 1px solid rgb(18, 43, 182);
+  margin-top: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.helpdesk-box {
+  border: 1px solid green;
+  margin-top: 10px;
+  text-align: center;
+  padding: 80px;
+}
+
+.aboutContent
+{
+    padding: 40px;
+    text-align: justify;    
+}
+
+.aboutContent h2{
+    color: #eaa312;
+    margin-bottom: 33px;
+}
+.aboutContent h4
+{
+    color:#178f8f;
+    margin-top: 20px;
+}
+.benefit .fa-circle{
+    font-size: 8px;
+}
+.benefit p
+{
+    padding-left:20px;
+}

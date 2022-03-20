@@ -1,0 +1,105 @@
+.scholarship-form {
+    margin: 30px;
+    color: rgb(1, 1, 2);
+  }
+  
+  .application-form {
+    margin: 30px;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px;
+  }
+  
+  .col-form-label:after {
+    content: "*";
+    color: red;
+    font-size: 14px;
+  }
+  
+  .side-heading,
+  .col-form-label {
+    font-size: 12px;
+  }
+  
+  .basic-details {
+    margin-top: 10px;
+    margin-left: 60px;
+  }
+  
+  .hor-line {
+    border: 1px solid green;
+    margin: 5px;
+  }
+  
+  .button-row {
+    text-align: center;
+    margin: 30px 0px;
+  }
+  
+  button {
+    border: 1px solid rgb(112, 109, 109);
+    background-color: green;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 5px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 20px;
+    cursor: pointer;
+  }
+  
+  .upload-section,
+  .scheme-applying {
+    margin-top: 60px;
+    margin-left: 60px;
+  }
+  
+  .upload-section {
+    font-size: 14px;
+  }
+  
+  .section-heading {
+    margin-bottom: 20px;
+  }
+  
+  .file-text {
+    font-size: 12px;
+    margin-left: 80px;
+  }
+  
+  .form-check {
+    margin: 25px;
+    display: flex;
+  }
+  
+  .view-field {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  
+  .further-text {
+    font-size: 14px;
+    text-align: center;
+  }
+  .error-msg {
+    margin-top: 3em;
+    color: red;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #e2041a;
+    font-size: 12px;
+  }
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }

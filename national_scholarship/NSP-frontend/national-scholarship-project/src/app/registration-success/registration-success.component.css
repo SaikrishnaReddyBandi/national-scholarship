@@ -1,0 +1,26 @@
+.container {
+    border: 1px solid green;
+    text-align: center;
+  }
+  
+  .scholarship-portal {
+    border: 2px solid rgb(221, 226, 221);
+    padding: 10px;
+    margin: 40px;
+    font-family: fantasy;
+  }
+  
+  .success-message {
+    color: green;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #04aa6d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+  }

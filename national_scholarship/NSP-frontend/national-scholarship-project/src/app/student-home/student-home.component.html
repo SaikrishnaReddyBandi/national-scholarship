@@ -1,0 +1,78 @@
+<div class="student-home">
+    <div class="logo-portal">
+      <div class="logo-in">
+        <img src="assets/logo.jpeg" alt="Logo" />
+      </div>
+      <div class="heading"><b>NATIONAL SCHOLARSHIP PORTAL</b></div>
+    </div>
+  
+    <div class="navigation">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="student-details">
+      <div class="row">
+        <div class="col my-profile">
+          <button type="button" class="btn btn-primary">My Profile</button>
+          <button type="button" class="btn btn-info">Check Status</button>
+          <button type="button" class="btn btn-success">Update</button>
+          <button type="button" class="btn btn-danger" routerLink="/home">
+            Logout
+          </button>
+        </div>
+  
+        <div class="col schemes">
+          <b>Schemes</b>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+            (click)="openNationalMatricDialog()"
+          >
+            National Merit Scholarship
+          </button>
+  
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+            (click)="openPostMatricDialog()"
+          >
+            Post Matric Scheme
+          </button>
+  
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+            (click)="openCentralScholarshipDialog()"
+          >
+            Central Scholarship Scheme
+          </button>
+        </div>
+        <div class="col guidlines">Guidlines</div>
+      </div>
+    </div>
+    <div class="description">
+      <div class="scheme">Scheme Description</div>
+      <div class="button-row">
+        <button type="submit" routerLink="/scholarship-form" target="_blank">
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>

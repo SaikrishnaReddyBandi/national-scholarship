@@ -1,0 +1,34 @@
+/* Full-width inputs */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #058383;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 1px solid green;
+  cursor: pointer;
+  width: 50%;
+}
+.psw a {
+  text-decoration: none;
+}
+
+.error-msg {
+  padding: 15px;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  font-weight: 400;
+  text-align: center;
+}

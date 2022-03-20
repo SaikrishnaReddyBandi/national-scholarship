@@ -1,0 +1,130 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+  }
+  
+  body {
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+  }
+  
+  .req {
+    color: #ff0000;
+  }
+  
+  label {
+    display: inline-block;
+  }
+  
+  .mat-form label,
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .mat-form .aps-form-control,
+  .form-group .form-control {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    height: 35px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #dde2ec;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .scholarship-form {
+    margin: 30px;
+    color: rgb(1, 1, 2);
+    border: 1px solid green;
+  }
+  
+  .hor-line {
+    border: 1px solid green;
+    margin: 0px 5px;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px;
+  }
+  
+  .application-form {
+    margin: 30px;
+  }
+  
+  .side-heading {
+    font-size: 12px;
+    margin-bottom: 10px;
+    background-color: #e6ebf0;
+    padding: 10px;
+  }
+  
+  .location-raidio {
+    padding: 0px 10px;
+    line-height: 25px;
+  }
+  .form-check {
+    margin: 25px;
+    display: flex;
+  }
+  
+  .agree-terms {
+    margin: 25px;
+  }
+  
+  .view-field {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  
+  .button-row {
+    text-align: center;
+    margin: 30px 0px;
+  }
+  
+  button {
+    border: 1px solid rgb(112, 109, 109);
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 20px;
+    cursor: pointer;
+  }
+  
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #e2041a;
+    font-size: 12px;
+  }
+  
+  .error-msg {
+    margin-top: 3em;
+    color: red;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border-color: red !important;
+  }

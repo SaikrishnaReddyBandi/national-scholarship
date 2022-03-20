@@ -1,0 +1,400 @@
+<div class="container">
+    <div class="form-heading">
+      <p>FRESH STUDENT REGISTRATION FORM</p>
+    </div>
+  
+    <div class="hor-line"></div>
+  
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="registration-form"
+    >
+      <!-- state and district -->
+      <div class="mb-3 row">
+        <!-- state of domicile -->
+        <label class="col-sm-2 view-field"
+          >STATE OF DOMICILE:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="domicile"
+            formControlName="domicile"
+            [ngClass]="{
+              'is-invalid': submitted && f['domicile'].errors
+            }"
+          >
+            <option selected>Select</option>
+            <option *ngFor="let state of City">{{ state }}</option>
+          </select>
+          <div *ngIf="submitted && f['domicile'].errors" class="invalid-feedback">
+            <div *ngIf="f['domicile'].errors['required']">
+              Domicile is required
+            </div>
+          </div>
+        </div>
+  
+        <!-- district -->
+        <label class="col-sm-1 view-field"
+          >DISTRICT:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="district"
+            formControlName="district"
+            [ngClass]="{
+              'is-invalid': submitted && f['district'].errors
+            }"
+          >
+            <option selected>Select</option>
+            <option *ngFor="let state of City">{{ state }}</option>
+          </select>
+          <div *ngIf="submitted && f['district'].errors" class="invalid-feedback">
+            <div *ngIf="f['district'].errors['required']">
+              Domicile is required
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- name & dob -->
+      <div class="mb-3 row">
+        <!-- name -->
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >FIRST NAME:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="firstName"
+            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
+          />
+  
+          <div
+            *ngIf="submitted && f['firstName'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['firstName'].errors['required']">Name is required</div>
+          </div>
+        </div>
+  
+        <!-- DOB -->
+        <label for="inputPassword" class="col-sm-1 view-field"
+          >DOB:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <input
+            id="dateOfBirth"
+            name="dateOfBirth"
+            type="date"
+            formControlName="dob"
+          />
+        </div>
+      </div>
+  
+      <!-- gender & mobile -->
+      <div class="mb-3 row">
+        <!-- gender -->
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >GENDER:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="gender"
+            formControlName="gender"
+            [ngClass]="{
+              'is-invalid': submitted && f['gender'].errors
+            }"
+          >
+            <option selected>Select</option>
+            <option *ngFor="let gender of Gender">{{ gender }}</option>
+          </select>
+          <div *ngIf="submitted && f['gender'].errors" class="invalid-feedback">
+            <div *ngIf="f['gender'].errors['required']">Gender is required</div>
+          </div>
+        </div>
+  
+        <!-- mobile number -->
+        <label for="inputPassword" class="col-sm-1 view-field"
+          >MOBILE:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <input
+            type="pattern"
+            class="form-control"
+            placeholder="Mobile Number"
+            id="mobile"
+            name="mobile"
+            formControlName="mobile"
+            [ngClass]="{
+              'is-invalid': submitted && f['mobile'].errors
+            }"
+          />
+          <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+            <div *ngIf="f['mobile'].errors['required']">
+              Mobile Number is required
+            </div>
+            <div *ngIf="f['mobile'].errors['pattern']">
+              Enter 10 digit Mobile Number
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- email -->
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >EMAIL:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-4">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': submitted && f['email'].errors
+            }"
+          />
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- institute & aadhar -->
+      <div class="mb-3 row">
+        <!-- institute code -->
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >INSTITUTE CODE: <span class="req">*</span></label
+        >
+        <div class="col-sm-3">
+          <input
+            type="text"
+            class="form-control"
+            id="instituteCode"
+            formControlName="instituteCode"
+            [ngClass]="{
+              'is-invalid': submitted && f['instituteCode'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && f['instituteCode'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['instituteCode'].errors['required']">
+              InstituteCode is required
+            </div>
+          </div>
+        </div>
+  
+        <!-- aadhar number -->
+        <label for="inputPassword" class="col-sm-1 view-field"
+          >AADHAR NUMBER: <span class="req">*</span></label
+        >
+        <div class="col-sm-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Aadhar No"
+            id="aadharNumber"
+            formControlName="aadharNumber"
+            [ngClass]="{
+              'is-invalid': submitted && f['aadharNumber'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && f['aadharNumber'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['aadharNumber'].errors['required']">
+              Aadhar Number is required
+            </div>
+            <div *ngIf="f['aadharNumber'].errors['pattern']">
+              Enter 12 digit valid Aadhar Number
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bank -->
+      <div class="mb-3 row">
+        <!-- Ifsc code -->
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >BANK IFSC CODE: <span class="req">*</span></label
+        >
+        <div class="col-sm-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="IFSC NO"
+            id="ifscCode"
+            formControlName="ifscCode"
+            [ngClass]="{
+              'is-invalid': submitted && f['ifscCode'].errors
+            }"
+          />
+          <div *ngIf="submitted && f['ifscCode'].errors" class="invalid-feedback">
+            <div *ngIf="f['ifscCode'].errors['required']">
+              IFSC Code is required
+            </div>
+          </div>
+        </div>
+  
+        <!-- account number -->
+        <label for="inputPassword" class="col-sm-1 view-field"
+          >BANK ACCOUNT NUMBER:<span class="req">*</span>
+        </label>
+        <div class="col-sm-3">
+          <input
+            type="pattern"
+            class="form-control"
+            placeholder="Account No"
+            id="accountNumber"
+            formControlName="accountNumber"
+            [ngClass]="{
+              'is-invalid': submitted && f['accountNumber'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && f['accountNumber'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['accountNumber'].errors['required']">
+              Account Number is required
+            </div>
+            <div *ngIf="f['accountNumber'].errors['pattern']">
+              Please enter numbers only
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bank Name -->
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >BANK NAME:
+          <span class="req">*</span>
+        </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Bank Name"
+            id="bankname"
+            formControlName="bankName"
+            [ngClass]="{
+              'is-invalid': submitted && f['bankName'].errors
+            }"
+          />
+          <div *ngIf="submitted && f['bankName'].errors" class="invalid-feedback">
+            <div *ngIf="f['bankName'].errors['required']">
+              Bank Name is required
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- set password -->
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >SET YOUR PASSWORD: <span class="req">*</span></label
+        >
+        <div class="col-sm-4">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="set password"
+            id="password"
+            name="setPassword"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+          />
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">
+              Password is required
+            </div>
+            <div *ngIf="f['password'].errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+            <div *ngIf="f['password'].errors['maxlength']">
+              Username must not exceed 40 characters
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- confirm password -->
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 view-field"
+          >CONFIRM PASSWORD:<span class="req">*</span></label
+        >
+        <div class="col-sm-4">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="conform Password"
+            id="inputPassword"
+            formControlName="confirmPassword"
+            [ngClass]="{
+              'is-invalid': submitted && f['confirmPassword'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && f['confirmPassword'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['confirmPassword'].errors['required']">
+              Confirm Password is required
+            </div>
+            <div *ngIf="f['confirmPassword'].errors['matching']">
+              Confirm Password does not match
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- check box -->
+      <div class="mb-3 form-check">
+        <input
+          type="checkbox"
+          id="agree"
+          formControlName="agree"
+          [ngClass]="{ 'is-invalid': submitted && f['agree'].errors }"
+        />
+        <label class="view-field">
+          <div class="agree-text">
+            ALL THE ABOVE INFORMATION FURNISHED BY ME IS TRUE TO THE BEST OF MY
+            KNOWLEDGE.
+          </div>
+        </label>
+        <div *ngIf="submitted && f['agree'].errors" class="invalid-feedback">
+          Accept Terms is required
+        </div>
+      </div>
+  
+      <div *ngIf="isValidForm" class="row error-msg">
+        <div>Please fill the necessary fields inorder to proceed!</div>
+      </div>
+  
+      <div class="button-row">
+        <button type="submit" target="_blank">REGISTER</button>
+        <button type="reset" (click)="reset()">RESET</button>
+      </div>
+    </form>
+  </div>

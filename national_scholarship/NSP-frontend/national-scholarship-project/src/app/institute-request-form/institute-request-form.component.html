@@ -1,0 +1,719 @@
+<div class="scholarship-form">
+    <div class="heading">
+      <b>INSTITUTE REGISTRATION REQUEST FORM</b>
+    </div>
+    <div class="hor-line"></div>
+    <form [formGroup]="instituteRegisterForm" (ngSubmit)="onSubmit()">
+      <!-- Basic Details -->
+      <div class="application-form">
+        <!-- Basic Information -->
+        <div class="side-heading"><b>BASIC DETAILS:</b></div>
+  
+        <!-- institute Name -->
+        <div class="row">
+          <!-- Name -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Name
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                id="name"
+                name="name"
+                formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+              />
+              <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                Institute Catagory
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="instituteCatagory"
+                formControlName="instituteCatagory"
+                [ngClass]="{
+                  'is-invalid': submitted && f['instituteCatagory'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['instituteCatagory'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['instituteCatagory'].errors['required']">
+                  Institute Catagory is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                State
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="state"
+                formControlName="state"
+                [ngClass]="{
+                  'is-invalid': submitted && f['state'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['state'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['state'].errors['required']">State is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                District
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="district"
+                formControlName="district"
+                [ngClass]="{
+                  'is-invalid': submitted && f['district'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['district'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['district'].errors['required']">
+                  District is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Institute code -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Institute Code
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Institute Code"
+                id="instituteCode"
+                name="instituteCode"
+                formControlName="instituteCode"
+                [ngClass]="{
+                  'is-invalid': submitted && f['instituteCode'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['instituteCode'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['instituteCode'].errors['required']">
+                  Institute Code is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Disc Code
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Disc Code"
+                id="diseCode"
+                name="diseCode"
+                formControlName="diseCode"
+                [ngClass]="{
+                  'is-invalid': submitted && f['diseCode'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['diseCode'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['diseCode'].errors['required']">
+                  Institute Code is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                Instittue Type
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="instituteType"
+                formControlName="instituteType"
+                [ngClass]="{
+                  'is-invalid': submitted && f['instituteType'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['instituteType'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['instituteType'].errors['required']">
+                  InstituteType is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                Affilated University State
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="affilatedUniversityState"
+                formControlName="affilatedUniversityState"
+                [ngClass]="{
+                  'is-invalid': submitted && f['affilatedUniversityState'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['affilatedUniversityState'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['affilatedUniversityState'].errors['required']">
+                  Affilated University State is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Radio buttons -->
+        <div class="form-group">
+          <div class="mt-4 pt-2">
+            <div class="radio-buttons">
+              <div class="form-group mat-form">
+                <label>Location:</label>
+              </div>
+              <input type="radio" value="urban" formControlName="location" />
+              <label for="contactChoice1" class="location-raidio">Urban</label>
+  
+              <input type="radio" value="rural" formControlName="location" />
+              <label for="location" class="location-raidio">Rural</label>
+  
+              <div
+                *ngIf="submitted && f['location'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['location'].errors['required']">
+                  Location is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Universiver & Admission start -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Affilated University/Board Name
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Affilated University/Board Name"
+                id="affilatedUniversityName"
+                name="affilatedUniversityName"
+                formControlName="affilatedUniversityName"
+                [ngClass]="{
+                  'is-invalid': submitted && f['affilatedUniversityName'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['affilatedUniversityState'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['affilatedUniversityState'].errors['required']">
+                  Affilated University State is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Year From which Admission Started
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="admissionStarted"
+                name="admissionStarted"
+                formControlName="admissionStarted"
+                [ngClass]="{
+                  'is-invalid': submitted && f['admissionStarted'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['admissionStarted'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['admissionStarted'].errors['required']">
+                  Admission Started Year is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- set PASSWORD -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                Set Password
+                <span class="req">*</span>
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="set password"
+                id="password"
+                name="setPassword"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['password'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['password'].errors['required']">
+                  Password is required
+                </div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+                <div *ngIf="f['password'].errors['maxlength']">
+                  Username must not exceed 40 characters
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- confirm PASSWORD -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                Confirm Password
+                <span class="req">*</span>
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="confirm password"
+                id="confirmPassword"
+                name="confirmPassword"
+                formControlName="confirmPassword"
+                [ngClass]="{
+                  'is-invalid': submitted && f['confirmPassword'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['confirmPassword'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['confirmPassword'].errors['required']">
+                  Confirm Password is required
+                </div>
+                <div *ngIf="f['confirmPassword'].errors['matching']">
+                  Confirm Password does not match
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Proof -->
+      <div class="application-form">
+        <div class="side-heading"><b>Proof of Existance of Institute:</b></div>
+  
+        <div class="mb-3 row">
+          <label for="aadharNumber" class="file-text col-sm-4 col-form-label-sm"
+            ><b>Institute Established/Registration Certificate:</b></label
+          >
+  
+          <div class="col-sm-3">
+            <input type="file" class="form-control form-control-sm" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Affilated -->
+      <div class="application-form">
+        <div class="side-heading"><b>Affilated To:</b></div>
+        <div class="mb-3 row">
+          <label for="aadharNumber" class="file-text col-sm-4 col-form-label-sm"
+            ><b>University/Board Affilation Certificate:</b></label
+          >
+          <div class="col-sm-3">
+            <input type="file" class="form-control form-control-sm" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Address -->
+      <div class="application-form">
+        <!-- Basic Information -->
+        <div class="side-heading"><b>ADDRESS:</b></div>
+  
+        <!-- institute Name -->
+        <div class="row">
+          <!-- Line 1 -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Line 1
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Line 1"
+                id="lineOne"
+                name="lineOne"
+                formControlName="lineOne"
+                [ngClass]="{
+                  'is-invalid': submitted && f['lineOne'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['lineOne'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['lineOne'].errors['required']">
+                  This field is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Line 2 -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Line 2
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Line 1"
+                id="lineTwo"
+                name="lineTwo"
+                formControlName="lineTwo"
+                [ngClass]="{
+                  'is-invalid': submitted && f['lineTwo'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['lineTwo'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['lineTwo'].errors['required']">
+                  This field is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- city -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >City
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                id="city"
+                name="city"
+                formControlName="city"
+                [ngClass]="{
+                  'is-invalid': submitted && f['city'].errors
+                }"
+              />
+              <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+                <div *ngIf="f['city'].errors['required']">city is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- state -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                State
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="state"
+                name="state"
+                formControlName="state"
+                [ngClass]="{
+                  'is-invalid': submitted && f['state'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['state'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['state'].errors['required']">state is required</div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- District -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label>
+                District
+                <span class="req">*</span>
+              </label>
+              <select
+                class="form-select form-select-sm form-control"
+                id="state"
+                name="district"
+                formControlName="district"
+                [ngClass]="{
+                  'is-invalid': submitted && f['district'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of states">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['district'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['district'].errors['required']">
+                  District is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Pincode -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Pincode
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="pinCode"
+                id="pinCode"
+                name="pinCode"
+                formControlName="pinCode"
+                [ngClass]="{
+                  'is-invalid': submitted && f['pinCode'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['pinCode'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['pinCode'].errors['required']">
+                  Pincode is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Contact Details -->
+  
+      <div class="application-form">
+        <div class="side-heading"><b>Contact Details:</b></div>
+  
+        <div class="row">
+          <!-- Principal Name -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Principal Name
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Principal Name"
+                id="principalName"
+                name="principalName"
+                formControlName="principalName"
+                [ngClass]="{
+                  'is-invalid': submitted && f['principalName'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['principalName'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['principalName'].errors['required']">
+                  Principal Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Mobile Number -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Mobile Number
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Mobile Number"
+                id="mobileNumber"
+                name="mobileNumber"
+                formControlName="mobileNumber"
+                [ngClass]="{
+                  'is-invalid': submitted && f['mobileNumber'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['mobileNumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['mobileNumber'].errors['required']">
+                  Mobile Number is required
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Telephone -->
+          <div class="col-md-4">
+            <div class="form-group mat-form">
+              <label
+                >Telephone
+                <span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Telephone"
+                id="telePhone"
+                name="telePhone"
+                formControlName="telePhone"
+                [ngClass]="{
+                  'is-invalid': submitted && f['telePhone'].errors
+                }"
+              />
+              <div
+                *ngIf="submitted && f['telePhone'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['telePhone'].errors['required']">
+                  Telephone is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="agree-terms">
+        <input
+          type="checkbox"
+          id="termsConditions"
+          formControlName="acceptTerms"
+          [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
+        />
+        <label class="view-field"
+          ><b
+            >All the details furnished by me are true tot the best of my
+            knowledge. If any mistakes are found then I may be disqualified for
+            Scholarship Scheme Announced by Government of India OR My State
+            Governement.</b
+          ></label
+        >
+        <div
+          *ngIf="submitted && f['acceptTerms'].errors"
+          class="invalid-feedback"
+        >
+          Accept Terms is required
+        </div>
+      </div>
+  
+      <div *ngIf="isValidForm" class="row error-msg">
+        <div>Please fill the necessary fields inorder to proceed!</div>
+      </div>
+  
+      <div class="button-row">
+        <!-- <button type="submit" routerLink="/application-verification" [disabled] = "!registerForm.valid">REGISTER</button> -->
+        <button type="submit" target="_blank">SUBMIT</button>
+        <button type="reset" (click)="reset()">RESET</button>
+      </div>
+    </form>
+  </div>

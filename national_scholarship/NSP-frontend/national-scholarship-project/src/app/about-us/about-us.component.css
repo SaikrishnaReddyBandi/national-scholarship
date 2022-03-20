@@ -1,0 +1,30 @@
+.dot{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius:50%;
+    display: inline-block;
+}
+
+.aboutContent
+{
+    padding: 40px;
+    text-align: justify;    
+}
+
+.aboutContent h2{
+    color: #eaa312;
+    margin-bottom: 33px;
+}
+.aboutContent h4
+{
+    color:#178f8f;
+    margin-top: 20px;
+}
+.benefit .fa-circle{
+    font-size: 8px;
+}
+.benefit p
+{
+    padding-left:20px;
+}

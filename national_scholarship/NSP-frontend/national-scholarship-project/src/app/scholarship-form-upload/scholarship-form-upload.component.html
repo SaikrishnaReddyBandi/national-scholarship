@@ -1,0 +1,528 @@
+<div class="scholarship-form">
+    <div class="heading">
+      <b>SCHOLARSHIP APPLICATION FORM</b>
+    </div>
+    <div class="hor-line"></div>
+    <form
+      [formGroup]="scholarshipForm"
+      (ngSubmit)="onSubmit()"
+      class="scholarship-form"
+    >
+      <div class="application-form">
+        <!-- Contact Details -->
+        <div class="side-heading"><b>Contact Details</b></div>
+        <div class="basic-details">
+          <!-- State & District & Block/Taluk -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >State</label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="state"
+                formControlName="state"
+                [ngClass]="{
+                  'is-invalid': submitted && f['state'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let state of City">{{ state }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['state'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['state'].errors['required']">State is required</div>
+              </div>
+              <!-- <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter State Name"
+              /> -->
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >District</label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="district"
+                formControlName="district"
+                [ngClass]="{
+                  'is-invalid': submitted && f['district'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let district of District">{{ district }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['district'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['district'].errors['required']">
+                  District is required
+                </div>
+              </div>
+              <!-- <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter District Name"
+              /> -->
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Block/Taluk</label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="taluk"
+                formControlName="taluk"
+                [ngClass]="{
+                  'is-invalid': submitted && f['taluk'].errors
+                }"
+              >
+                <option selected>Select</option>
+                <option *ngFor="let taluk of Taluck">{{ taluk }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['taluk'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['taluk'].errors['required']">
+                  Taluck is required
+                </div>
+              </div>
+              <!-- <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter Taluk Name"
+              /> -->
+            </div>
+          </div>
+  
+          <!-- House Number & Street Number & Pincode -->
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >House Number</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="houseno"
+                formControlName="houseno"
+                placeholder="Enter House Number"
+                [ngClass]="{ 'is-invalid': submitted && f['houseno'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['houseno'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['houseno'].errors['required']">
+                  House No is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Street Number</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="streetno"
+                formControlName="streetno"
+                placeholder="Enter street Number"
+                [ngClass]="{ 'is-invalid': submitted && f['streetno'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['streetno'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['streetno'].errors['required']">
+                  Street No is required
+                </div>
+              </div>
+            </div>
+  
+            <label
+              for="aadharNumber"
+              class="col-sm-1 col-form-label col-form-label-sm"
+              >Pincode</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="pincode"
+                formControlName="pincode"
+                placeholder="Enter street Number"
+                [ngClass]="{ 'is-invalid': submitted && f['pincode'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['pincode'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['pincode'].errors['required']">
+                  Pincodeis required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="scheme-applying">
+          <div class="form-group mb-3 row">
+            <label
+              for="aadharNumber"
+              class="col-sm-3 col-form-label col-form-label-sm"
+              ><b>Choose Scheme Applying For:</b></label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="schemeapplying"
+                formControlName="schemeapplying"
+                [ngClass]="{
+                  'is-invalid': submitted && f['schemeapplying'].errors
+                }"
+              >
+                <option selected>Choose one Scheme</option>
+                <option *ngFor="let schemes of Schemes">{{ schemes }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['schemeapplying'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['schemeapplying'].errors['required']">
+                  Choose One Scheme
+                </div>
+              </div>
+              <!-- <input
+                type="text"
+                class="form-control form-control-sm"
+                id="colFormLabelSm"
+                placeholder="Enter Scheme Number"
+              /> -->
+            </div>
+          </div>
+        </div>
+        <div class="upload-section">
+          <div class="section-heading"><b>Documents Upload Section:</b></div>
+          <div class="file-uploads">
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Domicile Certificate:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="domicilecerti"
+                  formControlName="domicilecerti"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['domicilecerti'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['domicilecerti'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['domicilecerti'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Student Photograph:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="studentphoto"
+                  formControlName="studentphoto"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['studentphoto'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['studentphoto'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['studentphoto'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Institute ID Card:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="instiuteidcard"
+                  formControlName="instiuteidcard"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['instiuteidcard'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['instiuteidcard'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['instiuteidcard'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Cast/Income Certificate:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="cast"
+                  formControlName="cast"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['cast'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['cast'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['cast'].errors['required']">File is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Previous Year MarkSheet:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="previousyearmark"
+                  formControlName="previousyearmark"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['previousyearmark'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['previousyearmark'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['previousyearmark'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Fee Receipt of Current Page:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="feereceipt"
+                  formControlName="feereceipt"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['feereceipt'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['feereceipt'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['feereceipt'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Bank PassBook(Front Page):</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="bankpassbook"
+                  formControlName="bankpassbook"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['bankpassbook'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['bankpassbook'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['bankpassbook'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >Aadhar Card:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="aadharcard"
+                  formControlName="aadharcard"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['aadharcard'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['aadharcard'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['aadharcard'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >10th Class MarkSheet:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="tenclass"
+                  formControlName="tenclass"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['tenclass'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['tenclass'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['tenclass'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <label
+                for="aadharNumber"
+                class="file-text col-sm-3 col-form-label-sm"
+                >12th Class MarkSheet:</label
+              >
+              <div class="col-sm-3">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  id="twelthclass"
+                  formControlName="twelthclass"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['twelthclass'].errors
+                  }"
+                />
+                <div
+                  *ngIf="submitted && f['twelthclass'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['twelthclass'].errors['required']">
+                    File is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            id="termsConditions"
+            formControlName="agree"
+            [ngClass]="{ 'is-invalid': submitted && f['agree'].errors }"
+          />
+          <label class="view-field"
+            ><b
+              >All the details furnished by me are true tot the best of my
+              knowledge. If any mistakes are found then I may be disqualified for
+              Scholarship Scheme Announced by Government of India OR My State
+              Governement.</b
+            ></label
+          >
+          <div *ngIf="submitted && f['agree'].errors" class="invalid-feedback">
+            Accept Terms is required
+          </div>
+        </div>
+  
+        <div class="further-text">
+          Further process is carried out by institute, State Nodal Officer and
+          Ministry.
+        </div>
+  
+        <div class="hor-line"></div>
+      </div>
+      <div class="button-row">
+        <!-- <button type="submit" [disabled] = "!registerForm.valid">REGISTER</button> -->
+        <button type="submit" target="_blank">Submit</button>
+        <button type="reset" (click)="reset()">Reset</button>
+      </div>
+    </form>
+  </div>

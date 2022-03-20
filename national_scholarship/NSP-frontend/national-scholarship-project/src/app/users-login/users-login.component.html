@@ -1,0 +1,29 @@
+<div class="national-scholarship">
+    <div class="national-scholar">
+      <ul>
+        <li class="logo">Logo</li>
+        <li>NATIONAL SCHOLARSHIP PORTAL</li>
+      </ul>
+    </div>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="container">
+        <!-- validation Error message -->
+        <div *ngIf="isValidForm" class="row error-msg">
+          <div>Please fill the necessary fields inorder to login!</div>
+        </div>
+        <p>Institute/State/Ministry</p>
+        <label for="uname" class="username">User ID</label>
+        <input type="text" id="userId" formControlName="userId" />
+        <br />
+        <label for="psw" class="password">Password</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
+      <div class="container forgot-password">
+        <span class="psw">Forgot <a href="#">Password?</a></span>
+      </div>
+  
+      <!-- <button type="submit" [disabled]="!loginForm.valid">Login</button> -->
+      <button type="submit">Login</button>
+    </form>
+  </div>
