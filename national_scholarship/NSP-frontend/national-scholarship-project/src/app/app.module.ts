@@ -23,6 +23,7 @@ import { PostmatricScholarshipDialogComponent } from './postmatric-scholarship-d
 import { MaterialModule } from './material/material.module';
 import { NationalmeritScholarshipDialogComponent } from './nationalmerit-scholarship-dialog/nationalmerit-scholarship-dialog.component';
 import { CentralScholarshipDialogComponent } from './central-scholarship-dialog/central-scholarship-dialog.component';
+import { InstituteLoginComponent } from './institute-login/institute-login.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CentralScholarshipDialogComponent } from './central-scholarship-dialog/
     PostmatricScholarshipDialogComponent,
     NationalmeritScholarshipDialogComponent,
     CentralScholarshipDialogComponent,
+    InstituteLoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,8 +19,6 @@ body {
   overflow: hidden;
   border: 1px solid green;
   margin: 10px 20px;
-  background-color: rgb(63, 128, 202);
-  color: aliceblue;
 }
 
 .topnav a {
@@ -57,14 +55,7 @@ body {
   --bs-gutter-x: 0rem;
 }
 
-.updates-box{
-  border: 1px solid rgb(18, 43, 182);
-  margin-top: 10px;
-  text-align: center;
-  padding: 20px;
-}
-
-
+.updates-box,
 .helpdesk-box {
   border: 1px solid green;
   margin-top: 10px;
@@ -72,25 +63,5 @@ body {
   padding: 80px;
 }
 
-.aboutContent
-{
-    padding: 40px;
-    text-align: justify;    
-}
 
-.aboutContent h2{
-    color: #eaa312;
-    margin-bottom: 33px;
-}
-.aboutContent h4
-{
-    color:#178f8f;
-    margin-top: 20px;
-}
-.benefit .fa-circle{
-    font-size: 8px;
-}
-.benefit p
-{
-    padding-left:20px;
-}
+

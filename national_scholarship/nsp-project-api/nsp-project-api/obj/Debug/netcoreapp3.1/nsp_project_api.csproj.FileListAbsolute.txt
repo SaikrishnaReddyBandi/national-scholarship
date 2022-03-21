@@ -1,0 +1,6 @@
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.csproj.AssemblyReference.cache
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.AssemblyInfoInputs.cache
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.AssemblyInfo.cs
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.csproj.CoreCompileInputs.cache
+D:\GitHub\national-scholarship\national_scholarship\nsp-project-api\nsp-project-api\obj\Debug\netcoreapp3.1\nsp_project_api.MvcApplicationPartsAssemblyInfo.cache
