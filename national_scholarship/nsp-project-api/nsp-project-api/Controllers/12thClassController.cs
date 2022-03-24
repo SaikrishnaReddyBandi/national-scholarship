@@ -19,7 +19,7 @@ namespace nsp_project_api.Controllers
         [Route("twelfthclass")]
         public IActionResult Gettwelfthclass()
         {
-            var data = from Twelfthclass in db._12thclasses select Twelfthclass;
+            var data = from Twelfthclass in db._12thclass select Twelfthclass;
             return Ok(data);
         }
         [HttpGet]
@@ -31,7 +31,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("RollNumber cannot be null,Try again");
             }
 
-            var data = db._12thclasses.Find(Rnumber);
+            var data = db._12thclass.Find(Rnumber);
 
 
             if (data == null)
@@ -49,7 +49,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db._12thclasses.Add(Twelfth);
+                    db._12thclass.Add(Twelfth);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -65,7 +65,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                _12thclass otwelfth = db._12thclasses.Find(Rnumber);
+                _12thclass otwelfth = db._12thclass.Find(Rnumber);
                 otwelfth.BoardName = Twelfth.BoardName;
                 otwelfth.Percentage = Twelfth.Percentage;
                 otwelfth.PassingYear = Twelfth.PassingYear;
@@ -81,9 +81,9 @@ namespace nsp_project_api.Controllers
         public IActionResult Deletetwelfthclass(int? Rnumber)
         {
             if (Rnumber == null) return BadRequest("RollNumber cannot be null");
-            var data = db._12thclasses.Find(Rnumber);
+            var data = db._12thclass.Find(Rnumber);
             if (data == null) return NotFound("Invalid RollNumber");
-            db._12thclasses.Remove(data);
+            db._12thclass.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

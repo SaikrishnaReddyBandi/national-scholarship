@@ -19,7 +19,7 @@ namespace nsp_project_api.Controllers
         [Route("aproval")]
         public IActionResult Getaproval()
         {
-            var data = from aproval in db.Aprovals select aproval;
+            var data = from aproval in db.Aproval select aproval;
             return Ok(data);
         }
         [HttpGet]
@@ -31,7 +31,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("AppId cannot be null,Try again");
             }
 
-            var data = db.Aprovals.Find(Appid);
+            var data = db.Aproval.Find(Appid);
 
 
             if (data == null)
@@ -49,7 +49,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db.Aprovals.Add(aprov);
+                    db.Aproval.Add(aprov);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -65,7 +65,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                Aproval oaproval = db.Aprovals.Find(Appid);
+                Aproval oaproval = db.Aproval.Find(Appid);
                 oaproval.Appid = aprov.Appid;
                 oaproval.InstituteCode = aprov.InstituteCode;
                 db.SaveChanges();
@@ -79,9 +79,9 @@ namespace nsp_project_api.Controllers
         public IActionResult Deleteaproval(int? Appid)
         {
             if (Appid == null) return BadRequest("Applicationid cannot be null");
-            var data = db.Aprovals.Find(Appid);
+            var data = db.Aproval.Find(Appid);
             if (data == null) return NotFound("Invalid Applicationid");
-            db.Aprovals.Remove(data);
+            db.Aproval.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

@@ -21,7 +21,7 @@ namespace nsp_project_api.Controllers
         [Route("InstStatMini")]
         public IActionResult GetInstStatMini()
         {
-            var data = from InstStatMini in db.InstituteStateMinistryLogins select InstStatMini;
+            var data = from InstStatMini in db.InstituteStateMinistryLogin select InstStatMini;
             return Ok(data);
         }
         [HttpGet]
@@ -33,7 +33,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("Userid cannot be null,Try again");
             }
 
-            var data = db.InstituteStateMinistryLogins.Find(Userid);
+            var data = db.InstituteStateMinistryLogin.Find(Userid);
 
 
             if (data == null)
@@ -51,7 +51,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db.InstituteStateMinistryLogins.Add(inststatmini);
+                    db.InstituteStateMinistryLogin.Add(inststatmini);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -67,7 +67,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                InstituteStateMinistryLogin oism = db.InstituteStateMinistryLogins.Find(inststatmini);
+                InstituteStateMinistryLogin oism = db.InstituteStateMinistryLogin.Find(inststatmini);
                 oism.Userid = inststatmini.Userid;
                 db.SaveChanges();
                 return Ok(inststatmini);
@@ -80,9 +80,9 @@ namespace nsp_project_api.Controllers
         public IActionResult DeleteInstsStatMini(int? Userid)
         {
             if (Userid == null) return BadRequest("Userid cannot be null");
-            var data = db.InstituteStateMinistryLogins.Find(Userid);
+            var data = db.InstituteStateMinistryLogin.Find(Userid);
             if (data == null) return NotFound("Invalid  Userid");
-            db.InstituteStateMinistryLogins.Remove(data);
+            db.InstituteStateMinistryLogin.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using nsp_project_api.Repository;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using nsp_project_api.Repository;
 using System.Linq;
 using System.Threading.Tasks;
+
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,7 +22,7 @@ namespace nsp_project_api.Controllers
         [Route("tenthclass")]
         public IActionResult Gettenthclass()
         {
-            var data = from Tenthclass in db._10thclasses select Tenthclass;
+            var data = from Tenthclass in db._10thclass select Tenthclass;
             return Ok(data);
         }
         [HttpGet]
@@ -31,7 +34,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("RollNumber cannot be null,Try again");
             }
 
-            var data = db._10thclasses.Find(RollNumber);
+            var data = db._10thclass.Find(RollNumber);
 
 
             if (data == null)
@@ -49,7 +52,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db._10thclasses.Add(Tenth);
+                    db._10thclass.Add(Tenth);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -65,7 +68,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                _10thclass otenth = db._10thclasses.Find(RollNumber);
+                _10thclass otenth = db._10thclass.Find(RollNumber);
                 otenth.BoardName = Tenth.BoardName;
                 otenth.Percentage = Tenth.Percentage;
                 otenth.PassingYear = Tenth.PassingYear;
@@ -81,9 +84,9 @@ namespace nsp_project_api.Controllers
         public IActionResult Deletetenthclass(int? RollNumber)
         {
             if (RollNumber == null) return BadRequest("Registrationid cannot be null");
-            var data = db._10thclasses.Find(RollNumber);
+            var data = db._10thclass.Find(RollNumber);
             if (data == null) return NotFound("Invalid Registrationid");
-            db._10thclasses.Remove(data);
+            db._10thclass.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

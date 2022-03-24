@@ -21,7 +21,7 @@ namespace nsp_project_api.Controllers
         [Route("Instlist")]
         public IActionResult GetInstitute()
         {
-            var data = from registration in db.InstituteRegistrationForms select registration;
+            var data = from registration in db.InstituteRegistrationForm select registration;
             return Ok(data);
         }
 
@@ -34,7 +34,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("Institutecode cannot be null,Try again");
             }
 
-            var data = db.InstituteRegistrationForms.Find(Institutecode);
+            var data = db.InstituteRegistrationForm.Find(Institutecode);
 
             if (data == null)
             {
@@ -52,7 +52,7 @@ namespace nsp_project_api.Controllers
                 try
                 {
 
-                    db.InstituteRegistrationForms.Add(Inst);
+                    db.InstituteRegistrationForm.Add(Inst);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -68,7 +68,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                InstituteRegistrationForm oinst = db.InstituteRegistrationForms.Find(InstituteCode);
+                InstituteRegistrationForm oinst = db.InstituteRegistrationForm.Find(InstituteCode);
                 oinst.InstituteName = inst.InstituteName;
                 oinst.Location = inst.Location;
                 oinst.InstituteCategory = inst.InstituteCategory;
@@ -84,9 +84,9 @@ namespace nsp_project_api.Controllers
         public IActionResult DeleteInst(int? InstituteCode)
         {
             if (InstituteCode == null) return BadRequest("Id cannot be null");
-            var data = db.InstituteRegistrationForms.Find(InstituteCode);
+            var data = db.InstituteRegistrationForm.Find(InstituteCode);
             if (data == null) return NotFound("Invalid Id");
-            db.InstituteRegistrationForms.Remove(data);
+            db.InstituteRegistrationForm.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

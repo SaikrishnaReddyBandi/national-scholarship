@@ -18,7 +18,7 @@ namespace nsp_project_api.Controllers
         [Route("scholarapp")]
         public IActionResult Getscholarapp()
         {
-            var data = from scholarshipapp in db.ScholarshipApplicationForms select scholarshipapp;
+            var data = from scholarshipapp in db.ScholarshipApplicationForm select scholarshipapp;
             return Ok(data);
         }
         [HttpGet]
@@ -30,7 +30,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("ApplicationId cannot be null,Try again");
             }
 
-            var data = db.ScholarshipApplicationForms.Find(Appid);
+            var data = db.ScholarshipApplicationForm.Find(Appid);
 
 
             if (data == null)
@@ -48,7 +48,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db.ScholarshipApplicationForms.Add(scholarapp);
+                    db.ScholarshipApplicationForm.Add(scholarapp);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -64,7 +64,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                ScholarshipApplicationForm oscholarapp = db.ScholarshipApplicationForms.Find(Appid);
+                ScholarshipApplicationForm oscholarapp = db.ScholarshipApplicationForm.Find(Appid);
                 oscholarapp.FamilyIncome = scholarapp.FamilyIncome;
                 oscholarapp.UniversityName = scholarapp.UniversityName;
                 oscholarapp.TutionFee = scholarapp.TutionFee;
@@ -80,9 +80,9 @@ namespace nsp_project_api.Controllers
         public IActionResult Deletescholarapp(int? Appid)
         {
             if (Appid == null) return BadRequest("Applicationid cannot be null");
-            var data = db.ScholarshipApplicationForms.Find(Appid);
+            var data = db.ScholarshipApplicationForm.Find(Appid);
             if (data == null) return NotFound("Invalid Applicationid");
-            db.ScholarshipApplicationForms.Remove(data);
+            db.ScholarshipApplicationForm.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

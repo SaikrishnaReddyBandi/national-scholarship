@@ -17,7 +17,7 @@ namespace nsp_project_api.Controllers
         [Route("Studlist")]
         public IActionResult GetStudlist()
         {
-            var data = from stud in db.Students select stud;
+            var data = from stud in db.Student select stud;
             return Ok(data);
         }
         [HttpGet]
@@ -29,7 +29,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("RollNumber cannot be null,Try again");
             }
 
-            var data = db.Students.Find(RollNumber);
+            var data = db.Student.Find(RollNumber);
 
 
             if (data == null)
@@ -48,7 +48,7 @@ namespace nsp_project_api.Controllers
                 try
                 {
 
-                    db.Students.Add(Stud);
+                    db.Student.Add(Stud);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -64,7 +64,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                Student ostud = db.Students.Find(RollNumber);
+                Student ostud = db.Student.Find(RollNumber);
                 ostud.EmailId = Stud.EmailId;
                 ostud.House = Stud.House;
                 ostud.Pincode = Stud.Pincode;
@@ -81,9 +81,9 @@ namespace nsp_project_api.Controllers
         public IActionResult DeleteStud(int? RollNumber)
         {
             if (RollNumber == null) return BadRequest("RollNumber cannot be null");
-            var data = db.Students.Find(RollNumber);
+            var data = db.Student.Find(RollNumber);
             if (data == null) return NotFound("Invalid RollNumber");
-            db.Students.Remove(data);
+            db.Student.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

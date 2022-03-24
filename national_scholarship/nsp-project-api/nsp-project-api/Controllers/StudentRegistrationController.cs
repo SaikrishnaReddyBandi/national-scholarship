@@ -20,7 +20,7 @@ namespace nsp_project_api.Controllers
         [Route("Studlist")]
         public IActionResult GetStudReglist()
         {
-            var data = from registration in db.StudentRegistrationForms select registration;
+            var data = from registration in db.StudentRegistrationForm select registration;
             return Ok(data);
         }
         [HttpGet]
@@ -32,7 +32,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("RegistrationId cannot be null,Try again");
             }
 
-            var data = db.StudentRegistrationForms.Find(Regid);
+            var data = db.StudentRegistrationForm.Find(Regid);
 
 
             if (data == null)
@@ -51,7 +51,7 @@ namespace nsp_project_api.Controllers
                 try
                 {
 
-                    db.StudentRegistrationForms.Add(Stud);
+                    db.StudentRegistrationForm.Add(Stud);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -67,7 +67,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                StudentRegistrationForm ostud = db.StudentRegistrationForms.Find(Regid);
+                StudentRegistrationForm ostud = db.StudentRegistrationForm.Find(Regid);
                 ostud._10thRollno = Stud._10thRollno;
                 ostud._12thRollno = Stud._12thRollno;
                 ostud.BankName = Stud.BankName;
@@ -90,9 +90,9 @@ namespace nsp_project_api.Controllers
         public IActionResult DeleteStudReg(int? Regid)
         {
             if (Regid == null) return BadRequest("RegistrationId cannot be null");
-            var data = db.StudentRegistrationForms.Find(Regid);
+            var data = db.StudentRegistrationForm.Find(Regid);
             if (data == null) return NotFound("Invalid RegistrationId");
-            db.StudentRegistrationForms.Remove(data);
+            db.StudentRegistrationForm.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }

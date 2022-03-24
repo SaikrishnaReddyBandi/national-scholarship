@@ -10,6 +10,8 @@ namespace nsp_project_api.Repository
 {
     public partial class dbNSPContext : DbContext
     {
+        internal object _10thclasses;
+
         public dbNSPContext()
         {
         }
@@ -33,7 +35,6 @@ namespace nsp_project_api.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("server=USER;initial catalog=dbNSP;user id=sa;password=Saireddy@136");
             }
         }

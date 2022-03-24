@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProjectWebApi
+namespace nsp_project_api
 {
     public class Startup
     {

@@ -17,7 +17,7 @@ namespace nsp_project_api.Controllers
         [Route("Studloginlist")]
         public IActionResult GetStudloginlist()
         {
-            var data = from login in db.StudentLogins select login;
+            var data = from login in db.StudentLogin select login;
             return Ok(data);
         }
         [HttpGet]
@@ -29,7 +29,7 @@ namespace nsp_project_api.Controllers
                 return BadRequest("RegistrationId cannot be null,Try again");
             }
 
-            var data = db.StudentLogins.Find(Regid);
+            var data = db.StudentLogin.Find(Regid);
 
 
             if (data == null)
@@ -47,7 +47,7 @@ namespace nsp_project_api.Controllers
             {
                 try
                 {
-                    db.StudentLogins.Add(Stud);
+                    db.StudentLogin.Add(Stud);
                     db.SaveChanges();
                 }
                 catch (Exception)
@@ -63,7 +63,7 @@ namespace nsp_project_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                StudentLogin ostud = db.StudentLogins.Find(Regid);
+                StudentLogin ostud = db.StudentLogin.Find(Regid);
                 ostud.Password = Stud.Password;
 
                 db.SaveChanges();
@@ -77,9 +77,9 @@ namespace nsp_project_api.Controllers
         public IActionResult DeleteStudlogin(int? Regid)
         {
             if (Regid == null) return BadRequest("Registrationid cannot be null");
-            var data = db.StudentLogins.Find(Regid);
+            var data = db.StudentLogin.Find(Regid);
             if (data == null) return NotFound("Invalid Registrationid");
-            db.StudentLogins.Remove(data);
+            db.StudentLogin.Remove(data);
             db.SaveChanges();
             return Ok("Record Successfully Deleted!!!");
         }
